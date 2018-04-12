@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/title_tv_shape"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="标题"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="管理员" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="id 123" />
+
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:stretchColumns="*"
+        >
+
+        <TableRow>
+            <ImageView
+                android:src="@mipmap/ic_launcher"/>
+            <TextView
+                android:text="@string/weather"
+                android:textSize="18sp"/>
+            <ImageView
+                android:src="@mipmap/ic_launcher"/>
+            <TextView
+                android:text="@string/temperature"
+                android:textSize="18sp"/>
+            <ImageView
+                android:src="@mipmap/ic_launcher"/>
+            <TextView
+                android:text="@string/humidity"
+                android:textSize="18sp"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_span="2"
+                android:textSize="18sp"/>
+            <TextView
+                android:layout_span="2"
+                android:textSize="18sp"/>
+            <TextView
+                android:layout_span="2"
+                android:textSize="18sp"/>
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:textSize="20sp"
+        android:text="时间"/>
+</LinearLayout>
