@@ -8,5 +8,4 @@ public class History {
     private String location;
     private String runTime;
     private int belongToRobotID;
-
 }
