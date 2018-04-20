@@ -2,41 +2,19 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="56dp"
     android:gravity="center"
+    android:background="@color/primaryDark"
     android:orientation="horizontal">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/title_tv_shape"
         android:gravity="center"
         android:padding="10dp"
         android:textSize="18sp"
+        android:textColor="@color/primaryText"
         android:text="标题"/>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textSize="18sp"
-            android:text="管理员" />
-
-        <TextView
-            android:id="@+id/bar_id_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textSize="18sp"
-            android:text="id 123" />
-
-    </LinearLayout>
 
     <TableLayout
         android:layout_width="0dp"
@@ -47,44 +25,45 @@
 
         <TableRow>
             <ImageView
-                android:src="@mipmap/ic_launcher"/>
+                android:src="@drawable/admin"/>
             <TextView
-                android:text="@string/weather"
-                android:textSize="18sp"/>
+                android:id="@+id/bar_id_tv"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/primaryText"
+                android:textSize="18sp"
+                android:text="id 123" />
             <ImageView
-                android:src="@mipmap/ic_launcher"/>
-            <TextView
-                android:text="@string/temperature"
-                android:textSize="18sp"/>
-            <ImageView
-                android:src="@mipmap/ic_launcher"/>
-            <TextView
-                android:text="@string/humidity"
-                android:textSize="18sp"/>
-        </TableRow>
-
-        <TableRow>
+                android:src="@drawable/weather"/>
             <TextView
                 android:id="@+id/bar_weather_tv"
-                android:layout_span="2"
+                android:text="@string/weather"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/primaryText"
                 android:textSize="18sp"/>
+            <ImageView
+                android:src="@drawable/temperature"/>
             <TextView
                 android:id="@+id/bar_temperature_tv"
-                android:layout_span="2"
+                android:text="@string/temperature"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/primaryText"
                 android:textSize="18sp"/>
+            <ImageView
+                android:src="@drawable/humidity"/>
             <TextView
                 android:id="@+id/bar_humidity_tv"
-                android:layout_span="2"
+                android:text="@string/humidity"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/primaryText"
+                android:textSize="18sp"/>
+            <ImageView
+                android:src="@drawable/time"/>
+            <TextView
+                android:id="@+id/bar_date_tv"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/primaryText"
                 android:textSize="18sp"/>
         </TableRow>
 
     </TableLayout>
-
-    <TextView
-        android:id="@+id/bar_date_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:textSize="20sp"
-        android:text="时间"/>
 </LinearLayout>

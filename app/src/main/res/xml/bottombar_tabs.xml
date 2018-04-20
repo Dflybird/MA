@@ -1,0 +1,22 @@
+<tabs>
+    <tab
+        id="@+id/tab_tasks"
+        icon="@drawable/task"
+        title="@string/task"/>
+    <tab
+        id="@+id/tab_detect"
+        icon="@drawable/detect"
+        title="@string/detect"/>
+    <tab
+        id="@+id/tab_transport"
+        icon="@drawable/transport"
+        title="@string/transport"/>
+    <tab
+        id="@+id/tab_environment"
+        icon="@drawable/environment"
+        title="@string/environment"/>
+    <tab
+        id="@+id/tab_target"
+        icon="@drawable/target"
+        title="@string/target" />
+</tabs>

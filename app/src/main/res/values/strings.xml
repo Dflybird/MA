@@ -2,7 +2,14 @@
     <string name="app_name">MA</string>
     <string name="test">测试</string>
 
+    <string name="task">任务</string>
+    <string name="detect">探索</string>
+    <string name="transport">运输</string>
+    <string name="environment">环境</string>
+    <string name="target">目标</string>
+
     <string name="weather">天气</string>
     <string name="temperature">温度</string>
     <string name="humidity">湿度</string>
+    <string name="time">时间</string>
 </resources>

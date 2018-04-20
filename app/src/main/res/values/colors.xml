@@ -27,8 +27,33 @@
     <color name="grey400">#BDBDBD</color>
     <color name="grey500">#9E9E9E</color>
     <color name="grey600">#757575</color>
-    <color name="grey700">#616161</color>
+    <color name="grey700">#616161</color>//primary
     <color name="grey800">#424242</color>
     <color name="grey900">#212121</color>
+
+    <color name="indigo50">#E8EAF6</color>
+    <color name="indigo100">#C5CAE9</color>
+    <color name="indigo200">#9FA8DA</color>
+    <color name="indigo300">#7986CB</color>
+    <color name="indigo400">#7986CB</color>
+    <color name="indigo500">#7986CB</color>
+    <color name="indigo600">#3949AB</color>
+    <color name="indigo700">#3949AB</color>
+    <color name="indigo800">#283593</color>
+    <color name="indigo900">#283593</color>
+    <color name="indigoA100">#8C9EFF</color>
+    <color name="indigoA200">#8C9EFF</color>
+    <color name="indigoA400">#8C9EFF</color>
+    <color name="indigoA700">#304FFE</color>
+
+
+    <color name="primaryLight">#8e8e8e</color>
+    <color name="primaryDark">#373737</color>
+    <color name="primary">#616161</color>
+    <color name="primaryText">#ffffff</color>
+    <color name="secondary">#81d4fa</color>
+    <color name="secondaryLight">#b6ffff</color>
+    <color name="secondaryDark">#4ba3c7</color>
+    <color name="secondaryText">#000000</color>
 
 </resources>

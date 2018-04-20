@@ -17,6 +17,7 @@ import com.example.gq.ma.utils.TimeThread;
 
 public class MyTitleBar extends LinearLayout {
 
+
     TextView mIdTV;
     TextView mWeatherTV;
     TextView mTemperatureTV;
@@ -31,10 +32,10 @@ public class MyTitleBar extends LinearLayout {
 
         //update time
         new Thread(new TimeThread(new MyHandler())).start();
-
     }
 
-    private void init() {
+    private void init(){
+
         mIdTV = findViewById(R.id.bar_id_tv);
         mWeatherTV =findViewById(R.id.bar_weather_tv);
         mTemperatureTV = findViewById(R.id.bar_temperature_tv);
@@ -43,7 +44,7 @@ public class MyTitleBar extends LinearLayout {
     }
 
     @SuppressLint("HandlerLeak")
-    class MyHandler extends Handler{
+    class MyHandler extends Handler {
 
         @Override
         public void handleMessage(Message msg) {
@@ -51,10 +52,10 @@ public class MyTitleBar extends LinearLayout {
                 case Const.Thread.TIME_CHANGE:
                     long sysTime = System.currentTimeMillis();
                     CharSequence sysTimeStr = DateFormat.format("HH:mm:ss", sysTime);
-                    mDateTV.setText(sysTimeStr);
+                    mDateTV.setText(sysTimeStr.toString());
                     break;
-                    default:
-                        break;
+                default:
+                    break;
             }
         }
     }

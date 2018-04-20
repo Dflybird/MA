@@ -21,6 +21,7 @@ public class TimeThread implements Runnable {
                 Thread.sleep(1000);
                 Message msg = new Message();
                 msg.what = Const.Thread.TIME_CHANGE;
+                handler.sendMessage(msg);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
