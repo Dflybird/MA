@@ -1,11 +1,22 @@
 package com.example.gq.ma.bean;
 
-public class Terrain {
+import org.litepal.crud.DataSupport;
+
+public class Terrain extends DataSupport{
 
     private int id;
-    private int TaskID;
+    private String name;
     private String location;
     private boolean isDetect;
+    private Task task;
+
+    public Task getTask() {
+        return task;
+    }
+
+    public void setTask(Task task) {
+        this.task = task;
+    }
 
     public int getId() {
         return id;
@@ -13,14 +24,6 @@ public class Terrain {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getTaskID() {
-        return TaskID;
-    }
-
-    public void setTaskID(int taskID) {
-        TaskID = taskID;
     }
 
     public String getLocation() {
@@ -39,13 +42,11 @@ public class Terrain {
         isDetect = detect;
     }
 
-    @Override
-    public String toString() {
-        return "Terrain{" +
-                "id=" + id +
-                ", TaskID=" + TaskID +
-                ", location='" + location + '\'' +
-                ", isDetect=" + isDetect +
-                '}';
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

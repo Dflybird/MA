@@ -1,13 +1,23 @@
 package com.example.gq.ma.bean;
 
-public class History {
+import org.litepal.crud.DataSupport;
+
+public class History extends DataSupport{
 
     private int id;
-    private int robotID;
     private int distance;
     private String date;
     private String location;
     private String runTime;
+    private Robot robot;
+
+    public Robot getRobot() {
+        return robot;
+    }
+
+    public void setRobot(Robot robot) {
+        this.robot = robot;
+    }
 
     public int getId() {
         return id;
@@ -15,14 +25,6 @@ public class History {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getRobotID() {
-        return robotID;
-    }
-
-    public void setRobotID(int robotID) {
-        this.robotID = robotID;
     }
 
     public int getDistance() {
@@ -61,11 +63,11 @@ public class History {
     public String toString() {
         return "History{" +
                 "id=" + id +
-                ", robotID=" + robotID +
                 ", distance=" + distance +
                 ", date='" + date + '\'' +
                 ", location='" + location + '\'' +
                 ", runTime='" + runTime + '\'' +
+                ", robot=" + robot +
                 '}';
     }
 }

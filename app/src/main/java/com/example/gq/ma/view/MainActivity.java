@@ -1,22 +1,19 @@
 package com.example.gq.ma.view;
 
-import android.annotation.SuppressLint;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v4.app.Fragment;
-import android.text.format.DateFormat;
 import android.util.Log;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.gq.ma.R;
 import com.example.gq.ma.adapter.MyFragmentAdapter;
 import com.example.gq.ma.base.BaseActivity;
-import com.example.gq.ma.config.Const;
-import com.example.gq.ma.utils.TimeThread;
+import com.example.gq.ma.utils.GLog;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
+
+import org.litepal.tablemanager.Connector;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +31,7 @@ public class MainActivity extends BaseActivity implements OnTabSelectListener{
         setContentView(R.layout.activity_main);
 
         init();
+        //Connector.getDatabase();
 
         List<Fragment> fragments = new ArrayList<>();
         fragments.add(new TaskFragment());

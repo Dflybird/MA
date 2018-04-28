@@ -12,4 +12,10 @@
     <string name="temperature">温度</string>
     <string name="humidity">湿度</string>
     <string name="time">时间</string>
+
+    <string name="task_location">目标位置</string>
+    <string name="task_run_time">任务执行时间</string>
+    <string name="task_team">执行任务编队</string>
+    <string name="task_time">任务开始时间</string>
+
 </resources>

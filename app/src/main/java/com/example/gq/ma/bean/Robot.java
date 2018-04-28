@@ -1,14 +1,36 @@
 package com.example.gq.ma.bean;
 
-public class Robot {
+import org.litepal.crud.DataSupport;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Robot extends DataSupport{
     enum robotType{}
 
     private int id;
-    private int TaskID;
     private int electric;
     private int distance;
     private String name;
-    private robotType type;
+    private boolean isDetect;
+    private Task task;
+    private List<History> histories = new ArrayList<>();
+
+    public Task getTask() {
+        return task;
+    }
+
+    public void setTask(Task task) {
+        this.task = task;
+    }
+
+    public List<History> getHistories() {
+        return histories;
+    }
+
+    public void setHistories(List<History> histories) {
+        this.histories = histories;
+    }
 
     public int getId() {
         return id;
@@ -16,14 +38,6 @@ public class Robot {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getTaskID() {
-        return TaskID;
-    }
-
-    public void setTaskID(int taskID) {
-        TaskID = taskID;
     }
 
     public int getElectric() {
@@ -50,23 +64,24 @@ public class Robot {
         this.name = name;
     }
 
-    public robotType getType() {
-        return type;
+    public boolean isDetect() {
+        return isDetect;
     }
 
-    public void setType(robotType type) {
-        this.type = type;
+    public void setDetect(boolean detect) {
+        isDetect = detect;
     }
 
     @Override
     public String toString() {
         return "Robot{" +
                 "id=" + id +
-                ", TaskID=" + TaskID +
                 ", electric=" + electric +
                 ", distance=" + distance +
                 ", name='" + name + '\'' +
-                ", type=" + type +
+                ", isDetect=" + isDetect +
+                ", task=" + task +
+                ", histories=" + histories +
                 '}';
     }
 }

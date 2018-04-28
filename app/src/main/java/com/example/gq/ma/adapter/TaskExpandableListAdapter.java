@@ -77,7 +77,7 @@ public class TaskExpandableListAdapter extends BaseExpandableListAdapter {
         GroupViewHolder groupViewHolder;
         if (convertView == null) {
             groupViewHolder = new GroupViewHolder();
-            convertView = LayoutInflater.from(context).inflate(R.layout.task_expandable_item, parent, false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.task_expandable_group_item, parent, false);
             groupViewHolder.groupTV = convertView.findViewById(R.id.task_expandable_tv);
             convertView.setTag(groupViewHolder);
         }
@@ -91,7 +91,7 @@ public class TaskExpandableListAdapter extends BaseExpandableListAdapter {
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
         ChildViewHolder childViewHolder;
         if (convertView == null){
-            convertView = LayoutInflater.from(context).inflate(R.layout.task_expandable_item,parent,false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.task_expandable_child_item,parent,false);
             childViewHolder = new ChildViewHolder();
             childViewHolder.childTV = convertView.findViewById(R.id.task_expandable_tv);
             convertView.setTag(childViewHolder);

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey100">
+    
+    <TextView
+        android:id="@+id/task_child_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="80dp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/spilt_line"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow>
+            <TextView
+                android:text="@string/task_location"/>
+            <TextView
+                android:id="@+id/task_location_tv"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="@string/task_time"/>
+            <TextView
+                android:id="@+id/task_time_tv"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="@string/task_team"/>
+            <TextView
+                android:id="@+id/task_team_tv"/>
+        </TableRow>
+
+    </TableLayout>
+</LinearLayout>

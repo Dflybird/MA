@@ -2,25 +2,29 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="56dp"
+    android:layout_height="48dp"
     android:gravity="center"
     android:background="@color/primaryDark"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:padding="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:textSize="18sp"
         android:textColor="@color/primaryText"
         android:text="标题"/>
 
     <TableLayout
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_weight="1"
         android:stretchColumns="*"
+        android:gravity="center_vertical"
         >
 
         <TableRow>
@@ -32,8 +36,9 @@
                 android:textColor="@color/primaryText"
                 android:textSize="18sp"
                 android:text="id 123" />
+
             <ImageView
-                android:src="@drawable/weather"/>
+                android:src="@drawable/weather" />
             <TextView
                 android:id="@+id/bar_weather_tv"
                 android:text="@string/weather"
