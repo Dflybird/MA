@@ -18,4 +18,10 @@
     <string name="task_team">执行任务编队</string>
     <string name="task_time">任务开始时间</string>
 
+    <string name="robot_name">名称</string>
+    <string name="robot_id">编号</string>
+    <string name="robot_distance">移动距离</string>
+    <string name="robot_electric">电量</string>
+
+
 </resources>

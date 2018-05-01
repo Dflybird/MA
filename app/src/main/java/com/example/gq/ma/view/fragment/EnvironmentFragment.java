@@ -1,4 +1,4 @@
-package com.example.gq.ma.view;
+package com.example.gq.ma.view.fragment;
 
 import android.os.Bundle;
 import android.view.View;
@@ -6,10 +6,10 @@ import android.view.View;
 import com.example.gq.ma.R;
 import com.example.gq.ma.base.BaseFragment;
 
-public class TransportFragment extends BaseFragment {
+public class EnvironmentFragment extends BaseFragment {
     @Override
     public int getResourceID() {
-        return R.layout.fragment_transport;
+        return R.layout.fragment_environment;
     }
 
     @Override

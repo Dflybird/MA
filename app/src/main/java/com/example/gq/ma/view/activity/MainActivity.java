@@ -1,19 +1,20 @@
-package com.example.gq.ma.view;
+package com.example.gq.ma.view.activity;
 
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.example.gq.ma.R;
 import com.example.gq.ma.adapter.MyFragmentAdapter;
 import com.example.gq.ma.base.BaseActivity;
-import com.example.gq.ma.utils.GLog;
+import com.example.gq.ma.view.CustomViewPager;
+import com.example.gq.ma.view.fragment.DetectFragment;
+import com.example.gq.ma.view.fragment.EnvironmentFragment;
+import com.example.gq.ma.view.fragment.TargetFragment;
+import com.example.gq.ma.view.fragment.TaskFragment;
+import com.example.gq.ma.view.fragment.TransportFragment;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
-
-import org.litepal.tablemanager.Connector;
 
 import java.util.ArrayList;
 import java.util.List;

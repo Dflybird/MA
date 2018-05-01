@@ -7,9 +7,18 @@ public class History extends DataSupport{
     private int id;
     private int distance;
     private String date;
+    private String target;
     private String location;
     private String runTime;
     private Robot robot;
+
+    public String getTarget() {
+        return target;
+    }
+
+    public void setTarget(String target) {
+        this.target = target;
+    }
 
     public Robot getRobot() {
         return robot;

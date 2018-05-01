@@ -1,4 +1,4 @@
-package com.example.gq.ma.view;
+package com.example.gq.ma.view.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.ExpandableListView;
-import android.widget.TextView;
 
 import com.example.gq.ma.R;
 import com.example.gq.ma.adapter.TaskExpandableListAdapter;
@@ -54,7 +53,7 @@ public class TaskFragment extends BaseFragment implements TaskViewInter {
     }
 
     @Override
-    public void onShowTaskList(List<Task> detectTasks, List<Task> transportTasks) {
+    public void onShowTaskList(final List<Task> detectTasks, final List<Task> transportTasks) {
         mExpandableListAdapter = new TaskExpandableListAdapter(context, detectTasks, transportTasks);
         mExpandableListView.setAdapter(mExpandableListAdapter);
         mExpandableListView.setGroupIndicator(null);
@@ -75,6 +74,12 @@ public class TaskFragment extends BaseFragment implements TaskViewInter {
                     transaction.add(R.id.task_child_fg,mChildFragment).commit();
                 }
                 boolean isDetect = groupPosition == 0;
+                int taskID;
+                if (isDetect)
+                    taskID = detectTasks.get(childPosition).getId();
+                else
+                    taskID = transportTasks.get(childPosition).getId();
+                mChildFragment.refresh(taskID, isDetect);
                 return true;
             }
         });
