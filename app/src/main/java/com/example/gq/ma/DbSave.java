@@ -22,6 +22,8 @@ public class DbSave {
         int robotHistory1[]    = {7, 8, 5, 6, 5, 7, 5, 7, 7, 5, 4, 7, 8, 6, 8, 5, 6, 7, 6, 6};
         int robotHistory2[]    = {4, 5, 7, 5, 5, 9, 6, 8, 6, 5, 5, 8, 7, 6, 5, 5, 6, 7, 5, 7};
         //存放总共20条任务
+
+        Random randomT = new Random(500);
         for (int i = 0; i < 20 ; i++)
         {
             Task task;
@@ -29,23 +31,26 @@ public class DbSave {
             {
                 task = new Task();
                 task.setDate("2018-4-" + Integer.toString(1 + (i/2)));
-                Random random = new Random(500);
-                task.setTitle("任务 代号:" + random.nextLong()%10000);
+                task.setTitle("任务 代号:" + Math.abs(randomT.nextLong()%10000));
             }
             //存储地形
             {
                 Random random = new Random(i * 2);
                 for (int j = 0; j < terrainDetect[i]; j++){
                     Terrain terrain = new Terrain();
+                    terrain.setName("地形d"+j*3);
                     terrain.setDetect(true);
-                    terrain.setLocation("("+ random.nextInt()%100 + "," + random.nextInt()%100 + ")");
+                    terrain.setLastDetectTime("2018-3-" + Integer.toString(1 + (j/2)));
+                    terrain.setLocation("("+ Math.abs(random.nextInt()%100)+ "," + Math.abs(random.nextInt()%100) + ")");
                     terrain.save();
                     task.getTerrains().add(terrain);
                 }
                 for (int j = 0; j < terrainNotDetect[i]; j++){
                     Terrain terrain = new Terrain();
+                    terrain.setName("地形d"+j*3);
                     terrain.setDetect(false);
-                    terrain.setLocation("("+ random.nextInt()%100 + "," + random.nextInt()%100 + ")");
+                    terrain.setLastDetectTime("2018-3-" + Integer.toString(1 + (j/2)));
+                    terrain.setLocation("("+ Math.abs(random.nextInt()%100) + "," + Math.abs(random.nextInt()%100) + ")");
                     terrain.save();
                     task.getTerrains().add(terrain);
                 }
@@ -55,15 +60,19 @@ public class DbSave {
                 Random random = new Random(i * 3);
                 for (int j = 0; j < targetTransport[i]; j++){
                     Target target = new Target();
+                    target.setName("目标m"+j*3);
                     target.setTransport(true);
-                    target.setLocation("("+ random.nextInt()%100 + "," + random.nextInt()%100 + ")");
+                    target.setLastTransportTime("2018-3-" + Integer.toString(1 + (j/2)));
+                    target.setLocation("("+ Math.abs(random.nextInt()%100) + "," + Math.abs(random.nextInt()%100) + ")");
                     target.save();
                     task.getTargets().add(target);
                 }
                 for (int j = 0; j < targetNotTransport[i]; j++){
                     Target target = new Target();
+                    target.setName("目标m"+j*3);
                     target.setTransport(false);
-                    target.setLocation("("+ random.nextInt()%100 + "," + random.nextInt()%100 + ")");
+                    target.setLastTransportTime("2018-3-" + Integer.toString(1 + (j/2)));
+                    target.setLocation("("+ Math.abs(random.nextInt()%100) + "," + Math.abs(random.nextInt()%100) + ")");
                     target.save();
                     task.getTargets().add(target);
                 }
@@ -74,17 +83,19 @@ public class DbSave {
                 Random random = new Random(i * 5);
                 for (int j = 0; j < robotDetect[i]; j++){
                     Robot robot = new Robot();
-                    robot.setDistance(random.nextInt()%1000);
-                    robot.setElectric(random.nextInt()%100);
+                    robot.setName("探测机器人t"+(j+2300));
+                    robot.setDistance(Math.abs(random.nextInt()%1000));
+                    robot.setElectric(Math.abs(random.nextInt()%100));
                     robot.setDetect(true);
                     // 存储历史
                     {
                         for (int k = 0; k < robotHistory1[i]; k++){
                             History history = new History();
                             history.setDate("2018-3-" + Integer.toString(20 + k));
-                            history.setDistance(random.nextInt()%1000);
-                            history.setLocation("("+ random.nextInt()%100 + "," + random.nextInt()%100 + ")");
-                            history.setRunTime(Integer.toString(random.nextInt() % 48));
+                            history.setDistance(Math.abs(random.nextInt()%1000));
+                            history.setTarget("探测地形");
+                            history.setLocation("("+ Math.abs(random.nextInt()%100) + "," + Math.abs(random.nextInt()%100) + ")");
+                            history.setRunTime(Integer.toString(Math.abs(random.nextInt() % 48)));
                             history.save();
                             robot.getHistories().add(history);
                         }
@@ -94,17 +105,19 @@ public class DbSave {
                 }
                 for (int j = 0; j < robotTransport[i]; j++){
                     Robot robot = new Robot();
-                    robot.setDistance(random.nextInt()%1000);
-                    robot.setElectric(random.nextInt()%100);
+                    robot.setName("运输机器人r"+(j+3700));
+                    robot.setDistance(Math.abs(random.nextInt()%1000));
+                    robot.setElectric(Math.abs(random.nextInt()%100));
                     robot.setDetect(false);
                     // 存储历史
                     {
                         for (int k = 0; k < robotHistory2[i]; k++){
                             History history = new History();
                             history.setDate("2018-3-" + Integer.toString(20 + k));
-                            history.setDistance(random.nextInt()%1000);
-                            history.setLocation("("+ random.nextInt()%100 + "," + random.nextInt()%100 + ")");
-                            history.setRunTime(Integer.toString(random.nextInt() % 48));
+                            history.setDistance(Math.abs(random.nextInt()%1000));
+                            history.setTarget("运输物品");
+                            history.setLocation("("+ Math.abs(random.nextInt()%100) + "," + Math.abs(random.nextInt()%100) + ")");
+                            history.setRunTime(Integer.toString(Math.abs(random.nextInt() % 48)));
                             history.save();
                             robot.getHistories().add(history);
                         }

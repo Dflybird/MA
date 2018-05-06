@@ -3,15 +3,22 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="36dp">
 
     <TextView
-        android:id="@+id/detect_robot_target_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
+        android:id="@+id/robot_target_tv"
+        android:layout_width="64dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:gravity="center_vertical"
+        android:textSize="13sp"
+        android:textColor="@color/secondaryText"/>
     <TextView
-        android:id="@+id/detect_robot_date_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:id="@+id/robot_date_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="128dp"
+        android:gravity="center_vertical"
+        android:textSize="13sp"
+        android:textColor="@color/secondaryText"/>
 </LinearLayout>

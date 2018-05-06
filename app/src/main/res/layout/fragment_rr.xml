@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/rr_title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/light_blue500"
+            android:textColor="@color/primaryText"
+            android:paddingTop="25dp"
+            android:paddingLeft="80dp"
+            android:textSize="18sp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rr_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="60dp"
+            android:background="@color/light_blue600">
+
+            <TableRow>
+                <TextView
+                    android:layout_width="64dp"
+                    android:textColor="@color/primaryText"
+                    android:textSize="13sp"
+                    android:text="@string/robot_id"/>
+                <TextView
+                    android:layout_width="64dp"
+                    android:textColor="@color/primaryText"
+                    android:textSize="13sp"
+                    android:id="@+id/rr_id_tv"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="64dp"
+                    android:textColor="@color/primaryText"
+                    android:textSize="13sp"
+                    android:text="@string/robot_name"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:textColor="@color/primaryText"
+                    android:textSize="13sp"
+                    android:id="@+id/rr_name_tv"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="64dp"
+                    android:textColor="@color/primaryText"
+                    android:textSize="13sp"
+                    android:text="@string/robot_distance"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:textColor="@color/primaryText"
+                    android:textSize="13sp"
+                    android:id="@+id/rr_distance_tv"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="64dp"
+                    android:textColor="@color/primaryText"
+                    android:textSize="13sp"
+                    android:text="@string/robot_electric"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:textColor="@color/primaryText"
+                    android:textSize="13sp"
+                    android:id="@+id/rr_electric_tv"/>
+            </TableRow>
+
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="64dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:gravity="center_vertical"
+                android:textSize="13sp"
+                android:textColor="@color/secondaryText"
+                android:text="@string/robot_target"/>
+            <TextView
+                android:layout_width="64dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="128dp"
+                android:gravity="center_vertical"
+                android:textSize="13sp"
+                android:textColor="@color/secondaryText"
+                android:text="@string/robot_time"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/spilt_line"/>
+
+        <ListView
+            android:id="@+id/rr_history_lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@null">
+
+        </ListView>
+
+    </LinearLayout>
+
+
+</LinearLayout>

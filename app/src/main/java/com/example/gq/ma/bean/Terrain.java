@@ -7,8 +7,17 @@ public class Terrain extends DataSupport{
     private int id;
     private String name;
     private String location;
+    private String lastDetectTime;
     private boolean isDetect;
     private Task task;
+
+    public String getLastDetectTime() {
+        return lastDetectTime;
+    }
+
+    public void setLastDetectTime(String lastDetectTime) {
+        this.lastDetectTime = lastDetectTime;
+    }
 
     public Task getTask() {
         return task;
@@ -48,5 +57,17 @@ public class Terrain extends DataSupport{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Terrain{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", location='" + location + '\'' +
+                ", lastDetectTime='" + lastDetectTime + '\'' +
+                ", isDetect=" + isDetect +
+                ", task=" + task +
+                '}';
     }
 }

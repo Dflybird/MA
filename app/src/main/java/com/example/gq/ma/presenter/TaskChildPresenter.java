@@ -6,6 +6,7 @@ import com.example.gq.ma.bean.Task;
 import com.example.gq.ma.bean.Terrain;
 import com.example.gq.ma.model.TaskModel;
 import com.example.gq.ma.presenter.inter.TaskChildPresenterInter;
+import com.example.gq.ma.utils.GLog;
 import com.example.gq.ma.view.inter.TaskChildViewInter;
 
 import java.util.List;

@@ -7,5 +7,5 @@ import java.util.List;
 public interface RobotModelInter {
 
     List<Robot> getRobotList();
-    Robot getRobotByID(int id);
+    Robot getRobotByID(int id, boolean isEager);
 }

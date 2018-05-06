@@ -22,7 +22,10 @@ public class RobotModel implements RobotModelInter {
     }
 
     @Override
-    public Robot getRobotByID(int id) {
-        return DataSupport.find(Robot.class, id);
+    public Robot getRobotByID(int id, boolean isEager) {
+        if (isEager)
+            return DataSupport.find(Robot.class, id, true);
+        else
+            return DataSupport.find(Robot.class, id);
     }
 }

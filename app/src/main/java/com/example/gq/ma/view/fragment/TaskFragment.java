@@ -75,10 +75,12 @@ public class TaskFragment extends BaseFragment implements TaskViewInter {
                 }
                 boolean isDetect = groupPosition == 0;
                 int taskID;
-                if (isDetect)
+                if (isDetect) {
                     taskID = detectTasks.get(childPosition).getId();
-                else
+                }
+                else {
                     taskID = transportTasks.get(childPosition).getId();
+                }
                 mChildFragment.refresh(taskID, isDetect);
                 return true;
             }

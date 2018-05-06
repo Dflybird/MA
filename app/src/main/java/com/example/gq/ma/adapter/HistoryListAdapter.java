@@ -33,8 +33,8 @@ public class HistoryListAdapter extends ArrayAdapter<History> {
             if (convertView == null){
                 convertView = LayoutInflater.from(context).inflate(resource, null);
                 viewHolder = new ViewHolder();
-                viewHolder.targetTV = convertView.findViewById(R.id.detect_robot_target_tv);
-                viewHolder.dateTV = convertView.findViewById(R.id.detect_robot_date_tv);
+                viewHolder.targetTV = convertView.findViewById(R.id.robot_target_tv);
+                viewHolder.dateTV = convertView.findViewById(R.id.robot_date_tv);
                 convertView.setTag(viewHolder);
             }else
                 viewHolder = (ViewHolder) convertView.getTag();

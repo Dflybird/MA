@@ -39,13 +39,12 @@ public class TaskChildFragment extends BaseFragment implements TaskChildViewInte
         taskLocationTV = view.findViewById(R.id.task_location_tv);
         taskTimeTV = view.findViewById(R.id.task_time_tv);
         taskTeamTV = view.findViewById(R.id.task_team_tv);
-
-        mTaskChildPresenter = new TaskChildPresenter(this);
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        mTaskChildPresenter = new TaskChildPresenter(this);
     }
 
     @Override

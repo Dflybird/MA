@@ -4,17 +4,23 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.widget.Toast;
 
+import com.example.gq.ma.DbSave;
 import com.example.gq.ma.R;
 import com.example.gq.ma.adapter.MyFragmentAdapter;
 import com.example.gq.ma.base.BaseActivity;
+import com.example.gq.ma.utils.GLog;
+import com.example.gq.ma.utils.HttpHelper;
 import com.example.gq.ma.view.CustomViewPager;
 import com.example.gq.ma.view.fragment.DetectFragment;
-import com.example.gq.ma.view.fragment.EnvironmentFragment;
 import com.example.gq.ma.view.fragment.TargetFragment;
 import com.example.gq.ma.view.fragment.TaskFragment;
+import com.example.gq.ma.view.fragment.TerrainFragment;
 import com.example.gq.ma.view.fragment.TransportFragment;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
+
+import org.json.JSONObject;
+import org.litepal.tablemanager.Connector;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,12 +39,15 @@ public class MainActivity extends BaseActivity implements OnTabSelectListener{
 
         init();
         //Connector.getDatabase();
+        //DbSave.save();
+
+
 
         List<Fragment> fragments = new ArrayList<>();
         fragments.add(new TaskFragment());
         fragments.add(new DetectFragment());
         fragments.add(new TransportFragment());
-        fragments.add(new EnvironmentFragment());
+        fragments.add(new TerrainFragment());
         fragments.add(new TargetFragment());
         mFragmentAdapter = new MyFragmentAdapter(getSupportFragmentManager(), fragments, null);
         mViewPager.setPagingEnabled(false);

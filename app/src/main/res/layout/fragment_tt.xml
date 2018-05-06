@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tt_title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/light_blue500"
+            android:textColor="@color/primaryText"
+            android:paddingTop="25dp"
+            android:paddingLeft="80dp"
+            android:textSize="18sp"/>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="32dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="72dp"
+                android:textColor="@color/grey800"
+                android:layout_gravity="center_vertical"
+                android:text="@string/t_id"/>
+            <TextView
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="208dp"
+                android:textColor="@color/grey800"
+                android:layout_gravity="center_vertical"
+                android:text="@string/t_name"/>
+            <TextView
+                android:layout_width="96dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="96dp"
+                android:textColor="@color/grey800"
+                android:layout_gravity="center_vertical"
+                android:text="@string/t_time"/>
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="72dp"
+            android:src="@drawable/spilt_line"/>
+
+        <ListView
+            android:id="@+id/tt_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:paddingLeft="20dp"
+            android:orientation="vertical"
+            android:paddingTop="20dp"
+            android:background="@color/light_blue600">
+            <TextView
+                android:id="@+id/t_id_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/primaryText"/>
+            <TextView
+                android:id="@+id/t_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primaryText"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/tt_info_im"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_launcher"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/spilt_line"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="20dp">
+            <TableRow>
+                <TextView
+                    android:layout_width="64dp"
+                    android:text="@string/t_location"/>
+                <TextView
+                    android:layout_width="64dp"
+                    android:id="@+id/t_location_tv"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="64dp"
+                    android:text="@string/t_complete"/>
+                <TextView
+                    android:layout_width="64dp"
+                    android:id="@+id/t_complete_tv"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="64dp"
+                    android:text="@string/t_time"/>
+                <TextView
+                    android:layout_width="64dp"
+                    android:id="@+id/t_time_tv"/>
+            </TableRow>
+
+        </TableLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/spilt_line"/>
+
+    </LinearLayout>
+</LinearLayout>

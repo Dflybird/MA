@@ -46,14 +46,28 @@
     <color name="indigoA400">#8C9EFF</color>
     <color name="indigoA700">#304FFE</color>
 
+    <color name="light_blue50">#E1F5FE</color>
+    <color name="light_blue100">#B3E5FC</color>
+    <color name="light_blue200">#81D4FA</color>
+    <color name="light_blue300">#4FC3F7</color>
+    <color name="light_blue400">#29B6F6</color>
+    <color name="light_blue500">#03A9F4</color>
+    <color name="light_blue600">#039BE5</color>
+    <color name="light_blue700">#0288D1</color>
+    <color name="light_blue800">#0277BD</color>
+    <color name="light_blue900">#01579B</color>
+    <color name="light_blueA100">#80D8FF</color>
+    <color name="light_blueA200">#40C4FF</color>
+    <color name="light_blueA400">#00B0FF</color>
+    <color name="light_blueA700">#0091EA</color>
 
     <color name="primaryLight">#8e8e8e</color>
     <color name="primaryDark">#373737</color>
     <color name="primary">#616161</color>
-    <color name="primaryText">#ffffff</color>
+    <color name="primaryText">#FAFAFA</color>
     <color name="secondary">#81d4fa</color>
     <color name="secondaryLight">#b6ffff</color>
     <color name="secondaryDark">#4ba3c7</color>
-    <color name="secondaryText">#000000</color>
+    <color name="secondaryText">#212121</color>
 
 </resources>

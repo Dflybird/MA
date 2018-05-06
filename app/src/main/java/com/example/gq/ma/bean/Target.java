@@ -7,8 +7,17 @@ public class Target extends DataSupport{
     private int id;
     private String name;
     private String location;
+    private String lastTransportTime;
     private boolean isTransport;
     private Task task;
+
+    public String getLastTransportTime() {
+        return lastTransportTime;
+    }
+
+    public void setLastTransportTime(String lastTransportTime) {
+        this.lastTransportTime = lastTransportTime;
+    }
 
     public Task getTask() {
         return task;

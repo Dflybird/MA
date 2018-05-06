@@ -22,6 +22,12 @@
     <string name="robot_id">编号</string>
     <string name="robot_distance">移动距离</string>
     <string name="robot_electric">电量</string>
+    <string name="robot_target">目标</string>
+    <string name="robot_time">时间</string>
 
-
+    <string name="t_id">编号</string>
+    <string name="t_name">名称</string>
+    <string name="t_location">坐标</string>
+    <string name="t_complete">是否完成</string>
+    <string name="t_time">完成时间</string>
 </resources>
