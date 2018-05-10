@@ -60,6 +60,11 @@ public class MyTitleBar extends LinearLayout implements MyTitleBarInter {
         mHumidityTV.setText(humidity);
     }
 
+    @Override
+    public void onShowUserEmail(String email) {
+        mIdTV.setText(email);
+    }
+
     @SuppressLint("HandlerLeak")
     class MyHandler extends Handler {
 

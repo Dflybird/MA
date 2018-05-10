@@ -1,5 +1,7 @@
 package com.example.gq.ma.view.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.widget.Toast;
@@ -11,6 +13,7 @@ import com.example.gq.ma.base.BaseActivity;
 import com.example.gq.ma.utils.GLog;
 import com.example.gq.ma.utils.HttpHelper;
 import com.example.gq.ma.view.CustomViewPager;
+import com.example.gq.ma.view.MyTitleBar;
 import com.example.gq.ma.view.fragment.DetectFragment;
 import com.example.gq.ma.view.fragment.TargetFragment;
 import com.example.gq.ma.view.fragment.TaskFragment;
@@ -31,6 +34,13 @@ public class MainActivity extends BaseActivity implements OnTabSelectListener{
     BottomBar mBottomBar;
     CustomViewPager mViewPager;
     MyFragmentAdapter mFragmentAdapter;
+    MyTitleBar titleBar;
+
+    public static void actionStart(Context context, String email){
+        Intent intent = new Intent(context, MainActivity.class);
+        intent.putExtra("email", email);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +50,6 @@ public class MainActivity extends BaseActivity implements OnTabSelectListener{
         init();
         //Connector.getDatabase();
         //DbSave.save();
-
 
 
         List<Fragment> fragments = new ArrayList<>();

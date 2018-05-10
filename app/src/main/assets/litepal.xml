@@ -37,6 +37,7 @@
         <mapping class="com.example.gq.ma.bean.Robot"/>
         <mapping class="com.example.gq.ma.bean.Target"/>
         <mapping class="com.example.gq.ma.bean.Terrain"/>
+        <mapping class="com.example.gq.ma.bean.User"/>
     </list>
 
     <!--

@@ -5,9 +5,10 @@ import org.litepal.crud.DataSupport;
 public class User extends DataSupport {
 
     private String id;
+    private String email;
     private String name;
+    private String mobile;
     private String password;
-    private boolean isAdmin;
 
     public String getId() {
         return id;
@@ -33,11 +34,19 @@ public class User extends DataSupport {
         this.password = password;
     }
 
-    public boolean isAdmin() {
-        return isAdmin;
+    public String getEmail() {
+        return email;
     }
 
-    public void setAdmin(boolean admin) {
-        isAdmin = admin;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 }
