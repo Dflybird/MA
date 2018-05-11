@@ -50,7 +50,8 @@ public class MainActivity extends BaseActivity implements OnTabSelectListener{
         init();
         //Connector.getDatabase();
         //DbSave.save();
-
+        Intent intent = getIntent();
+        titleBar.onShowUserEmail(intent.getStringExtra("email"));
 
         List<Fragment> fragments = new ArrayList<>();
         fragments.add(new TaskFragment());
@@ -96,6 +97,7 @@ public class MainActivity extends BaseActivity implements OnTabSelectListener{
     private void init() {
         mBottomBar = findViewById(R.id.bottomBar);
         mViewPager = findViewById(R.id.view_pager);
+        titleBar = findViewById(R.id.title_bar);
     }
 
 

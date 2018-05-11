@@ -79,7 +79,7 @@ public class SignUpActivity extends BaseActivity implements SignUpViewInter {
 
     @Override
     public void onSignUpFailed() {
-        Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
+        Toast.makeText(getBaseContext(), "sign up failed", Toast.LENGTH_LONG).show();
         signUpBT.setEnabled(true);
     }
 

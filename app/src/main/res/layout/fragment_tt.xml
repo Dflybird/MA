@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="2"
@@ -19,57 +20,76 @@
             android:paddingTop="25dp"
             android:paddingLeft="80dp"
             android:textSize="18sp"/>
-        
+
+        <com.getbase.floatingactionbutton.AddFloatingActionButton
+            android:id="@+id/semi_transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            fab:fab_colorNormal="@color/secondary"
+            fab:fab_colorPressed="@color/light_blue100"
+            fab:fab_plusIconColor="@color/grey100"
+            android:layout_marginLeft="16dp"
+            fab:fab_size="mini"/>
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="60dp">
 
-            <TextView
-                android:layout_width="32dp"
-                android:layout_height="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="32dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="72dp"
+                    android:textColor="@color/grey800"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/t_id"/>
+                <TextView
+                    android:layout_width="64dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="208dp"
+                    android:textColor="@color/grey800"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/t_name"/>
+                <TextView
+                    android:layout_width="96dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="96dp"
+                    android:textColor="@color/grey800"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/t_time"/>
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:scaleType="fitXY"
                 android:layout_marginLeft="72dp"
-                android:textColor="@color/grey800"
-                android:layout_gravity="center_vertical"
-                android:text="@string/t_id"/>
-            <TextView
-                android:layout_width="64dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="208dp"
-                android:textColor="@color/grey800"
-                android:layout_gravity="center_vertical"
-                android:text="@string/t_name"/>
-            <TextView
-                android:layout_width="96dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="96dp"
-                android:textColor="@color/grey800"
-                android:layout_gravity="center_vertical"
-                android:text="@string/t_time"/>
+                android:src="@drawable/spilt_line"/>
 
-
+            <ListView
+                android:id="@+id/tt_lv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@null"/>
         </LinearLayout>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:scaleType="fitXY"
-            android:layout_marginLeft="72dp"
-            android:src="@drawable/spilt_line"/>
-
-        <ListView
-            android:id="@+id/tt_lv"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:divider="@null"/>
-    </LinearLayout>
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="vertical">
-        
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"

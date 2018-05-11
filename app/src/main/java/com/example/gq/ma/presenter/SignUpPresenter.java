@@ -6,6 +6,7 @@ import android.util.Patterns;
 import com.example.gq.ma.bean.User;
 import com.example.gq.ma.model.LoginModel;
 import com.example.gq.ma.presenter.inter.SignUpPresenterInter;
+import com.example.gq.ma.utils.GLog;
 import com.example.gq.ma.view.inter.SignUpViewInter;
 
 import java.util.List;
@@ -31,6 +32,7 @@ public class SignUpPresenter implements SignUpPresenterInter {
         signUpViewInter.signUpButtonEnabled(false);
         signUpViewInter.onShowProgressBar();
 
+
         //TODO: 添加逻辑代码
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -41,8 +43,9 @@ public class SignUpPresenter implements SignUpPresenterInter {
                 user.setMobile(mobile);
                 user.setPassword(password);
                 List<User> userList = loginModel.getUserByEmail(email);
+                GLog.d(user.toString());
                 if (userList.size() == 0 && loginModel.addUser(user)) {
-                   signUpViewInter.onSignUpSuccess();
+                    signUpViewInter.onSignUpSuccess();
                 } else
                     signUpViewInter.onSignUpFailed();
                 signUpViewInter.dismissProgressBar();

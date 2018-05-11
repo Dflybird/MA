@@ -4,17 +4,17 @@ import org.litepal.crud.DataSupport;
 
 public class User extends DataSupport {
 
-    private String id;
+    private int id;
     private String email;
     private String name;
     private String mobile;
     private String password;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -48,5 +48,16 @@ public class User extends DataSupport {
 
     public void setMobile(String mobile) {
         this.mobile = mobile;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                ", mobile='" + mobile + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

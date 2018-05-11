@@ -2,6 +2,7 @@ package com.example.gq.ma.model;
 
 import com.example.gq.ma.bean.User;
 import com.example.gq.ma.model.inter.LoginModelInter;
+import com.example.gq.ma.utils.GLog;
 
 import org.litepal.crud.DataSupport;
 
@@ -26,6 +27,8 @@ public class LoginModel implements LoginModelInter {
 
     @Override
     public boolean addUser(User user) {
-        return user.save();
+        boolean suc = user.save();
+        GLog.d("suc = "+ suc);
+        return suc;
     }
 }

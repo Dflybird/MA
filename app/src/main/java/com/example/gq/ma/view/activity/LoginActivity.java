@@ -12,10 +12,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.gq.ma.DbSave;
 import com.example.gq.ma.R;
 import com.example.gq.ma.base.BaseActivity;
+import com.example.gq.ma.bean.User;
 import com.example.gq.ma.presenter.LoginPresenter;
+import com.example.gq.ma.utils.GLog;
 import com.example.gq.ma.view.inter.LoginViewInter;
+
+import org.litepal.tablemanager.Connector;
 
 public class LoginActivity extends BaseActivity implements LoginViewInter {
 
@@ -35,6 +40,9 @@ public class LoginActivity extends BaseActivity implements LoginViewInter {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        //Connector.getDatabase();
+        //DbSave.save();
 
         presenter = new LoginPresenter(this);
 
