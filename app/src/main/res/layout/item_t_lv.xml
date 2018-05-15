@@ -12,6 +12,7 @@
         android:layout_marginLeft="18dp"
         android:layout_marginRight="18dp"
         app:civ_border_width="2dp"
+        android:layout_gravity="center_vertical"
         app:civ_border_color="@color/primaryLight"/>
     <TextView
         android:id="@+id/t_id_lv_tv"
@@ -28,9 +29,14 @@
         android:layout_marginLeft="208dp"/>
     <TextView
         android:id="@+id/t_time_lv_tv"
-        android:layout_width="96dp"
+        android:layout_width="68dp"
         android:layout_height="wrap_content"
         android:textColor="@color/grey800"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="96dp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/more"/>
 </LinearLayout>

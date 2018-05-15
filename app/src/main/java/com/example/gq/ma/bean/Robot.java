@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Robot extends DataSupport{
-    enum robotType{}
 
     private int id;
     private int electric;

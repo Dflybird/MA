@@ -29,7 +29,7 @@
             fab:fab_colorNormal="@color/secondary"
             fab:fab_colorPressed="@color/light_blue100"
             fab:fab_plusIconColor="@color/grey100"
-            android:layout_marginLeft="16dp"
+            android:layout_marginLeft="8dp"
             fab:fab_size="mini"/>
 
         <LinearLayout
