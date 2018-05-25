@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -12,7 +13,10 @@ import com.example.gq.ma.adapter.TargetListAdapter;
 import com.example.gq.ma.base.BaseFragment;
 import com.example.gq.ma.bean.Target;
 import com.example.gq.ma.presenter.TargetPresenter;
+import com.example.gq.ma.view.activity.AddTActivity;
+import com.example.gq.ma.view.activity.EditTActivity;
 import com.example.gq.ma.view.inter.TargetViewInter;
+import com.getbase.floatingactionbutton.AddFloatingActionButton;
 
 import java.util.List;
 
@@ -27,6 +31,9 @@ public class TargetFragment extends BaseFragment implements TargetViewInter {
     private TextView timeTV;
     private ListView tListView;
     private TextView titleTv;
+    private AddFloatingActionButton addFloatBT;
+    private ImageView editIV;
+    private ImageView deleteIV;
 
     private List<Target> targetList;
 
@@ -47,16 +54,44 @@ public class TargetFragment extends BaseFragment implements TargetViewInter {
         timeTV = view.findViewById(R.id.t_time_tv);
         tListView = view.findViewById(R.id.tt_lv);
         titleTv = view.findViewById(R.id.tt_title_tv);
+        addFloatBT = view.findViewById(R.id.t_add_float_bt);
+        editIV = view.findViewById(R.id.t_edit_im);
+        deleteIV = view.findViewById(R.id.t_delete_im);
         titleTv.setText("运输 > 目标物");
 
         mTargetListAdapter = new TargetListAdapter(context, R.layout.item_t_lv, targetList);
         tListView.setAdapter(mTargetListAdapter);
         tListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
                 mTargetPresenter.loadTargetInfoByID(targetList.get(position).getId());
+                editIV.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Target target = targetList.get(position);
+                        EditTActivity.targetActionStart(context, target.getId(), target.getName(),
+                                target.getLocation(), target.getLastTransportTime(), target.isTransport());
+                    }
+                });
+
+                deleteIV.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        targetList.remove(position);
+                        mTargetListAdapter.notifyDataSetChanged();
+                        tListView.invalidate();
+                    }
+                });
             }
         });
+
+        addFloatBT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AddTActivity.targetActionStart(context);
+            }
+        });
+
     }
 
     @Override

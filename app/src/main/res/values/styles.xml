@@ -29,7 +29,7 @@
         <!--<item name="colorControlNormal">@color/grey50</item>-->
         <!--&lt;!&ndash;<item name="colorControlActivated">@color/grey100</item>&ndash;&gt;-->
         <!--<item name="colorControlHighlight">@color/grey100</item>-->
-        <!--<item name="android:textColorHint">@color/grey400</item>-->
+        <item name="android:textColorHint">@color/grey400</item>
 
         <!--<item name="colorButtonNormal">@color/secondaryDark</item>-->
         <!--<item name="android:colorButtonNormal" tools:targetApi="lollipop">@color/secondaryDark</item>-->
@@ -40,4 +40,5 @@
         <item name="android:textColorPrimary">@color/grey400</item>
         <item name="android:background">@color/secondary</item>
     </style>
+
 </resources>

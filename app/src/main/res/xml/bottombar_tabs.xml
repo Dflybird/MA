@@ -14,7 +14,7 @@
     <tab
         id="@+id/tab_environment"
         icon="@drawable/environment"
-        title="@string/environment"/>
+        title="@string/terrain"/>
     <tab
         id="@+id/tab_target"
         icon="@drawable/target"

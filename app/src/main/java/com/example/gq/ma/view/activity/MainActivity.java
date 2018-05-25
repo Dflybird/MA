@@ -48,8 +48,8 @@ public class MainActivity extends BaseActivity implements OnTabSelectListener{
         setContentView(R.layout.activity_main);
 
         init();
-        //Connector.getDatabase();
-        //DbSave.save();
+//        Connector.getDatabase();
+//        DbSave.save();
         Intent intent = getIntent();
         titleBar.onShowUserEmail(intent.getStringExtra("email"));
 

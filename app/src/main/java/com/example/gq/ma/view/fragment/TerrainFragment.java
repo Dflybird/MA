@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -13,7 +14,10 @@ import com.example.gq.ma.base.BaseFragment;
 import com.example.gq.ma.bean.Terrain;
 import com.example.gq.ma.presenter.TerrainPresenter;
 import com.example.gq.ma.presenter.inter.TerrainPresenterInter;
+import com.example.gq.ma.view.activity.AddTActivity;
+import com.example.gq.ma.view.activity.EditTActivity;
 import com.example.gq.ma.view.inter.TerrainViewInter;
+import com.getbase.floatingactionbutton.AddFloatingActionButton;
 
 import java.util.List;
 
@@ -27,6 +31,9 @@ public class TerrainFragment extends BaseFragment implements TerrainViewInter {
     private TextView timeTV;
     private ListView tListView;
     private TextView titleTv;
+    private AddFloatingActionButton addFloatBT;
+    private ImageView editIV;
+    private ImageView deleteIV;
 
     private List<Terrain> terrainList;
 
@@ -47,14 +54,41 @@ public class TerrainFragment extends BaseFragment implements TerrainViewInter {
         timeTV = view.findViewById(R.id.t_time_tv);
         tListView = view.findViewById(R.id.tt_lv);
         titleTv = view.findViewById(R.id.tt_title_tv);
+        addFloatBT = view.findViewById(R.id.t_add_float_bt);
+        editIV = view.findViewById(R.id.t_edit_im);
+        deleteIV = view.findViewById(R.id.t_delete_im);
         titleTv.setText("探测 > 目标地");
 
         mTerrainListAdapter = new TerrainListAdapter(context, R.layout.item_t_lv, terrainList);
         tListView.setAdapter(mTerrainListAdapter);
         tListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
                 mTerrainPresenter.loadTerrainInfoByID(terrainList.get(position).getId());
+                editIV.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Terrain terrain = terrainList.get(position);
+                        EditTActivity.TerrainActionStart(context, terrain.getId(), terrain.getName(),
+                                terrain.getLocation(), terrain.getLastDetectTime(), terrain.isDetect());
+                    }
+                });
+
+                deleteIV.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        terrainList.remove(position);
+                        mTerrainListAdapter.notifyDataSetChanged();
+                        tListView.invalidate();
+                    }
+                });
+            }
+        });
+
+        addFloatBT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AddTActivity.terrainActionStart(context);
             }
         });
     }

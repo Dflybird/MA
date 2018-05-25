@@ -12,7 +12,7 @@
         app:cardCornerRadius="3dp"
         app:cardElevation="16dp"
         app:contentPadding="4dp"
-        app:cardBackgroundColor="@color/grey50">
+        app:cardBackgroundColor="@color/grey300">
 
         <LinearLayout
             android:layout_width="512dp"
@@ -29,7 +29,7 @@
                 android:layout_marginTop="8dp">
 
                 <EditText
-                    android:id="@+id/t_add_name"
+                    android:id="@+id/t_edit_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/name"
@@ -43,7 +43,7 @@
                 android:layout_marginTop="8dp">
 
                 <EditText
-                    android:id="@+id/t_add_location"
+                    android:id="@+id/t_edit_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/location"
@@ -57,7 +57,7 @@
                 android:layout_marginTop="8dp">
 
                 <EditText
-                    android:id="@+id/t_add_time"
+                    android:id="@+id/t_edit_time"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/time"
@@ -65,7 +65,7 @@
             </android.support.design.widget.TextInputLayout>
 
             <RadioGroup
-                android:id="@+id/add_rg"
+                android:id="@+id/edit_rg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -89,13 +89,13 @@
 
 
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/add_bt"
+                android:id="@+id/change_bt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
                 android:layout_marginTop="24dp"
                 android:padding="12dp"
-                android:text="@string/add"
+                android:text="@string/change"
                 android:textColor="@color/grey100" />
 
         </LinearLayout>

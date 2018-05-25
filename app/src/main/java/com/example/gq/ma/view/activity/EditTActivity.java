@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -19,32 +17,45 @@ import com.example.gq.ma.bean.Target;
 import com.example.gq.ma.bean.Terrain;
 import com.example.gq.ma.utils.GLog;
 
-public class AddTActivity extends BaseActivity {
+public class EditTActivity extends BaseActivity {
 
     private EditText nameET;
     private EditText locationET;
     private EditText timeET;
-    private Button addBT;
+    private Button changeBT;
     private RadioButton isTypeRB;
 
     private boolean isTerrain;
+    int id;
 
-    public static void terrainActionStart(Context context){
-        Intent intent = new Intent(context, AddTActivity.class);
+    public static void TerrainActionStart(Context context, int id, String name, String location,
+                                   String time, boolean isType){
+        Intent intent = new Intent(context, EditTActivity.class);
         intent.putExtra("isTerrain",  true);
+        intent.putExtra("name", name);
+        intent.putExtra("location", location);
+        intent.putExtra("time", time);
+        intent.putExtra("isType", isType);
+        intent.putExtra("id", id);
         context.startActivity(intent);
     }
 
-    public static void targetActionStart(Context context){
-        Intent intent = new Intent(context, MainActivity.class);
-        intent.putExtra("isTerrain", false);
+    public static void targetActionStart(Context context, int id, String name, String location,
+                                   String time, boolean isType){
+        Intent intent = new Intent(context, EditTActivity.class);
+        intent.putExtra("isTerrain",  false);
+        intent.putExtra("name", name);
+        intent.putExtra("location", location);
+        intent.putExtra("time", time);
+        intent.putExtra("isType", isType);
+        intent.putExtra("id", id);
         context.startActivity(intent);
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home){
-            GLog.d(Integer.toString(item.getItemId()));
             finish();
             return true;
         }
@@ -54,14 +65,12 @@ public class AddTActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_t_add);
+        setContentView(R.layout.activity_t_edit);
 
-        isTerrain = getIntent().getBooleanExtra("isTerrain", false);
-
-        nameET = findViewById(R.id.t_add_name);
-        locationET = findViewById(R.id.t_add_location);
-        timeET = findViewById(R.id.t_add_time);
-        addBT = findViewById(R.id.add_bt);
+        nameET = findViewById(R.id.t_edit_name);
+        locationET = findViewById(R.id.t_edit_location);
+        timeET = findViewById(R.id.t_edit_time);
+        changeBT = findViewById(R.id.change_bt);
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null){
@@ -69,10 +78,17 @@ public class AddTActivity extends BaseActivity {
             actionBar.setDisplayShowCustomEnabled(true);
             actionBar.setDisplayShowHomeEnabled(false);
             actionBar.setDisplayShowTitleEnabled(true);
-            setTitle("添加");
+            setTitle("修改");
         }
 
-        addBT.setOnClickListener(new View.OnClickListener() {
+        Intent intent = getIntent();
+        isTerrain = intent.getBooleanExtra("isTerrain", false);
+        id = intent.getIntExtra("id", 0);
+        nameET.setText(intent.getStringExtra("name"));
+        locationET.setText(intent.getStringExtra("location"));
+        timeET.setText(intent.getStringExtra("time"));
+
+        changeBT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (validate()){
@@ -89,16 +105,14 @@ public class AddTActivity extends BaseActivity {
                         target.setLastTransportTime(timeET.getText().toString());
                         target.setLocation(locationET.getText().toString());
 
-                        target.save();
+                        target.update(id);
                     }
                 }
-
             }
         });
-
     }
 
     private boolean validate() {
-        return  true;
+        return true;
     }
 }

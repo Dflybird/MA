@@ -8,6 +8,7 @@
     <string name="transport">运输</string>
     <string name="environment">环境</string>
     <string name="target">目标</string>
+    <string name="terrain">地形</string>
 
     <string name="weather">天气</string>
     <string name="temperature">温度</string>
@@ -38,7 +39,15 @@
     <string name="sign_up">创建账户</string>
     <string name="password">密码</string>
     <string name="email">邮箱</string>
-    <string name="name">姓名</string>
+    <string name="p_name">姓名</string>
     <string name="mobile">手机号码</string>
     <string name="re_enter_password">再次确认密码</string>
+
+    <string name="add">添加</string>
+    <string name="change">修改</string>
+    <string name="name">名称</string>
+    <string name="location">位置</string>
+
+    <string name="yes">是</string>
+    <string name="no">否</string>
 </resources>
